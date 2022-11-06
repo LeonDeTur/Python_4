@@ -9,3 +9,22 @@
 
 # !!! не использовать константу math.pi
 
+import math
+
+input = int(input('Введитие точность вычисления числа Pi в количестве знаков после запятой (например, 3) (максимальная точность вычисления 14 знаков): '))
+
+def arctg (num, accuracy):
+    result = 0
+    _ = 1
+    while _ < accuracy+1:
+        result = result + ((-1)**(_-1) * num**(2*_-1)) / (2*_-1)
+        _ += 1
+    
+    return result
+
+Pi = str(16*arctg(1/5,input) - 4*arctg(1/239,input))
+result = '' 
+for _ in range(input+2):
+    result = result + Pi[_]
+
+print(f'Число Pi с точностью до {input}-го знака после запятой: {result}')
