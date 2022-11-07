@@ -21,7 +21,7 @@ coef_list = []
 for _ in range(coef):
     coef_list.append(random.randint(-100, 100))
 
-result = ''
+result = f'k={coef} -> '
 i = 0
 while coef > 0:
     if i == 0:
@@ -35,8 +35,9 @@ while coef > 0:
     i += 1
     coef -= 1
 
+result = result + '= 0'
 print (result)
 
 data = open('4.txt', 'a')
-data.write (f'{result}')
+data.write (f'{result}\n')
 data.close()
